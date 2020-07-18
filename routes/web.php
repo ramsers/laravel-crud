@@ -13,29 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return "show all posts";
-});
+Route::get('/', 'PostController@index');
 
 
-Route::get('/posts/create', function () {
-    return "create page";
-});
-Route::post('/posts', function () {
-    return "store data";
-});
-Route::get('/posts/{title}', function ($title) {
-    return "show single post";
-});
-Route::get('/posts/{title}/edit', function ($title) {
-    return "edit post";
-});
-Route::put('/posts/{title}', function ($title) {
-    return "save updated post";
-});
-Route::delete('/posts/{title}', function ($title) {
-    return "delete post";
-});
+Route::get('/posts/create', 'PostController@create');
+
+Route::post('/posts', 'PostController@store');
+
+Route::get('/posts/{title}', 'PostController@show');
+
+Route::get('/posts/{title}/edit', 'PostController@edit');
+
+Route::put('/posts/{title}', 'PostController@update');
+
+Route::delete('/posts/{title}', 'PostController@destroy');
 
 
 
