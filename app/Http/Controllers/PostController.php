@@ -14,7 +14,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        return "Homepage";
+        $user_name = "Raheim";
+        $age = 16;
+        return view('pages/home', compact('user_name', 'age'));
     }
 
     /**
@@ -44,9 +46,9 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show(Post $post, $title)
     {
-        return "Show single page";
+        return "Show {$title} page ";
     }
 
     /**
@@ -55,7 +57,7 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit(Post $post, $title)
     {
         return "Edit page";
     }
@@ -67,7 +69,7 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, Post $post, $title)
     {
         return "update single data";
     }
@@ -78,7 +80,7 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy(Post $post, $title)
     {
         return "Delete Data";
     }
