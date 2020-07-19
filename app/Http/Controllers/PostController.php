@@ -14,9 +14,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $user_name = "Raheim";
-        $age = 16;
-        return view('pages/home', compact('user_name', 'age'));
+        $posts = [1,2,3,4,5,6,7,8];
+        return view('posts/index', compact('posts'));
     }
 
     /**
@@ -26,7 +25,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return "Create Page";
+        return view('posts/create');
     }
 
     /**
@@ -48,7 +47,7 @@ class PostController extends Controller
      */
     public function show(Post $post, $title)
     {
-        return "Show {$title} page ";
+       return view('posts/show');
     }
 
     /**
@@ -59,7 +58,7 @@ class PostController extends Controller
      */
     public function edit(Post $post, $title)
     {
-        return "Edit page";
+        return view('posts/edit');
     }
 
     /**
